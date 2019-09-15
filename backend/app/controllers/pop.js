@@ -6,13 +6,20 @@ module.exports = function(app){
     var DadosTipo0 = app.models.dadosTipo0;
     var DadosTipo1 = app.models.dadosTipo1;
 
-    var controller = {         
+    
+    var controller = {  
+        init: function(req,res){
+        const output = app.get('Neural').run([203202,23929394,1]);
+        const stats = console.log(`Prob: ${output}`);
+
+        res.send({}); 
+        },        
         popDadosTipo0: function(req,res){     
             fs.createReadStream('./dadosTipo0.csv')
                 .pipe(csv())
                 .on('data', (row) => {
-                // console.log(row)
-                DadosTipo0.create(row);
+                console.log(row)
+                // DadosTipo0.create(row);
             })
             .on('end', () => {
                 console.log('CSV file successfully processed');                
