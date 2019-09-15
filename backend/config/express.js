@@ -19,7 +19,7 @@ module.exports = function(){
     app.set('port', PORT);
     app.use(bodyParser.json());
     app.use(cors());
-    
+
     app.set('NeuralNet', net);
     var n = new TreinamentoNeural();  
     n.treina(net);

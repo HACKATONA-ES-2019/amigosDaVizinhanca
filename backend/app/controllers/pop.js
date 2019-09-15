@@ -10,6 +10,8 @@ module.exports = function(app){
     var controller = {  
         init: function(req,res){
         const output = app.get('NeuralNet').run([203202,23929394,1]);
+            console.log(output);
+
         const stats = console.log(`Prob: ${output}`);
 
         res.send({}); 
