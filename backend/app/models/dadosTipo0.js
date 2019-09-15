@@ -2,13 +2,19 @@ var mongoose = require('mongoose');
 
 module.exports = function(){
     var schema = mongoose.Schema({
-        regiao: {
+        pais: {
             type: String,
         }, 
-        desastre: {
+        uf: {
             type: String,
         }, 
-        qtdCasos: {
+        epdemia: {
+            type: String,
+        }, 
+        qtdInfectadas: {
+            type: Number,
+        }, 
+        qtdHabitantes: {
             type: Number,
         }, 
         mes: {
@@ -19,5 +25,5 @@ module.exports = function(){
         },
     });
 
-    return mongoose.model('DadosDesastre', schema, 'dadosDesastre');
+    return mongoose.model('DadosTipo0', schema, 'dadosTipo0');
 }

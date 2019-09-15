@@ -3,21 +3,16 @@ const csv = require('csv-parser');
 const fs = require('fs');
 
 module.exports = function(app){
-    var DadosEpdemia = app.models.dadosEpdemia;
-    var DadosDesastres = app.models.dadosDesastres;
+    var DadosTipo0 = app.models.dadosTipo0;
+    var DadosTipo1 = app.models.dadosTipo1;
 
-    var controller = {
-        index: function(req,res){
-            res.send({
-                teste:1
-            });            
-        },   
-        popDadosEpdemia: function(req,res){     
-            fs.createReadStream('./arquivo.csv')
+    var controller = {         
+        popDadosTipo0: function(req,res){     
+            fs.createReadStream('./dadosTipo0.csv')
                 .pipe(csv())
                 .on('data', (row) => {
-                console.log(row)
-                //DadosEpdemia.create(row);
+                // console.log(row)
+                DadosTipo0.create(row);
             })
             .on('end', () => {
                 console.log('CSV file successfully processed');                
@@ -25,12 +20,12 @@ module.exports = function(app){
             
             res.send({}); 
         },   
-        popDadosDesastre: function(req,res){     
-            fs.createReadStream('./arquivo2.csv')
+        popDadosTipo1: function(req,res){     
+            fs.createReadStream('./dadosTipo1.csv')
                 .pipe(csv())
                 .on('data', (row) => {
                 console.log(row)
-                //DadosDesastre.create(row);
+                // DadosTipo1.create(row);
             })
             .on('end', () => {
                 console.log('CSV file successfully processed');                

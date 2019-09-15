@@ -5,19 +5,19 @@ module.exports = function(){
         regiao: {
             type: String,
         }, 
-        epdemia: {
+        desastre: {
             type: String,
         }, 
-        qtdInfectadas: {
-            type: Number,
-        }, 
-        qtdHabitantes: {
+        qtdCasos: {
             type: Number,
         }, 
         mes: {
             type: Number,
         },
+        ano: {
+            type: Number,
+        },
     });
 
-    return mongoose.model('DadosEpdemia', schema, 'dadosEpdemia');
+    return mongoose.model('dadosTipo1', schema, 'dadosTipo1');
 }
