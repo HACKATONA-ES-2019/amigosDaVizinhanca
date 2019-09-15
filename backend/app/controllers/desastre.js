@@ -2,20 +2,36 @@ module.exports = function(app){
     var Desastre = app.models.desastre;
 
     var json = [{
-        id_plano: '5d7da96dcf44ad11b47bf90c',
-        nome:"desastre1",
+        //Dengue
+        id_plano: '5d7e0427332069300a9a5cc6',
+        nome:"Dengue",
         tipo:0
     },
     {
-        id_plano: '5d7da96dcf44ad11b47bf90c',
-        nome:"desastre2", 
+        //Meningite
+        id_plano: '5d7e0427332069300a9a5cc8',
+        nome:"Meningite", 
         tipo:0
     },
     {
-        id_plano: '5d7da96dcf44ad11b47bf90d',
-        nome:"desastre3",
+        //H1N1
+        id_plano: '5d7e0427332069300a9a5cc7',
+        nome:"H1N1",
+        tipo:0
+    },
+    {
+        //Incendio
+        id_plano: '5d7e0427332069300a9a5cc9',
+        nome:"Incendio  ",
         tipo:1
-    }];
+    },
+    {
+        //Enchente
+        id_plano: '5d7e0427332069300a9a5cca',
+        nome:"Enchente",
+        tipo:1
+    },
+];
 
     var controller = {
         pop: function(req,res){
@@ -41,22 +57,7 @@ module.exports = function(app){
                 //res.send({}); 
                 res.send(desastres);
             });
-
-            // Desastre.find({},[],{}).exec().then((desastres) => {
-            //         res.send(desastres);
-            // })
-
-
         }
-
-
-
-
-           
-
-
-
     }
-
     return controller;
 }
