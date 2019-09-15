@@ -20,7 +20,9 @@ module.exports = function(app){
             })
             .on('end', () => {
                 console.log('CSV file successfully processed');                
-            });            
+            });    
+            
+            res.send({}); 
         }   
         // login: function(req, res){
         //     var name = req.body.name,
