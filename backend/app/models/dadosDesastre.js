@@ -1,23 +1,23 @@
-// var mongoose = require('mongoose');
+var mongoose = require('mongoose');
 
-// module.exports = function(){
-//     var schema = mongoose.Schema({
-//         regiao: {
-//             type: String,
-//         }, 
-//         desastre: {
-//             type: String,
-//         }, 
-//         qtdInfectadas: {
-//             type: Number,
-//         }, 
-//         qtdHabitantes: {
-//             type: Number,
-//         }, 
-//         mes: {
-//             type: Number,
-//         },
-//     });
+module.exports = function(){
+    var schema = mongoose.Schema({
+        regiao: {
+            type: String,
+        }, 
+        desastre: {
+            type: String,
+        }, 
+        qtdCasos: {
+            type: Number,
+        }, 
+        mes: {
+            type: Number,
+        },
+        ano: {
+            type: Number,
+        },
+    });
 
-//     return mongoose.model('DadosDesastre', schema, 'dadosDesastre');
-// }
+    return mongoose.model('DadosDesastre', schema, 'dadosDesastre');
+}

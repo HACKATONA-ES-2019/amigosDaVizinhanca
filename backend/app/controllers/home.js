@@ -4,6 +4,7 @@ const fs = require('fs');
 
 module.exports = function(app){
     var DadosEpdemia = app.models.dadosEpdemia;
+    var DadosDesastres = app.models.dadosDesastres;
 
     var controller = {
         index: function(req,res){
@@ -11,7 +12,7 @@ module.exports = function(app){
                 teste:1
             });            
         },   
-        pop: function(req,res){     
+        popDadosEpdemia: function(req,res){     
             fs.createReadStream('./arquivo.csv')
                 .pipe(csv())
                 .on('data', (row) => {
@@ -23,7 +24,20 @@ module.exports = function(app){
             });    
             
             res.send({}); 
-        }   
+        },   
+        popDadosDesastre: function(req,res){     
+            fs.createReadStream('./arquivo2.csv')
+                .pipe(csv())
+                .on('data', (row) => {
+                console.log(row)
+                //DadosDesastre.create(row);
+            })
+            .on('end', () => {
+                console.log('CSV file successfully processed');                
+            });    
+            
+            res.send({}); 
+        },  
         // login: function(req, res){
         //     var name = req.body.name,
         //         password = req.body.password;

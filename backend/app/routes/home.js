@@ -6,5 +6,6 @@ module.exports = function(app){
 
     app.get('/init', controller.index);        
     //app.post('/login',controller.login);    
-    app.get('/populate',controller.pop);
+    app.get('/popDadosEpdemia',controller.popDadosEpdemia);
+    app.get('/popDadosDesastre',controller.popDadosDesastre);
 }
