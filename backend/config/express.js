@@ -6,7 +6,6 @@ var cors = require('cors');
 var auth = require('./auth').auth;
 
 const TreinamentoNeural = require('./treinamentoNeural');
-
 var brain = require(`brain.js`);
 var net = new brain.NeuralNetwork();
 

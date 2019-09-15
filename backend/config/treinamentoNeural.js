@@ -19,10 +19,8 @@ class TreinamentoNeural {
             list.push(row)
         })
         .on('end', () => {
-            // console.log(list[0].qtdInfectadas);
             console.log('CSV file successfully processed');   
-            
-            console.log(list);
+
             var result = [];
             list.forEach( row => {
                 result.push({

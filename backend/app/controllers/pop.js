@@ -2,16 +2,21 @@ var login = require('../../config/auth').login;
 const csv = require('csv-parser');
 const fs = require('fs');
 
+// var brain = require(`brain.js`);
+// var net = new brain.NeuralNetwork();
+
+// const TreinamentoNeural = require('../../config/treinamentoNeural');
+
 module.exports = function(app){
     var DadosTipo0 = app.models.dadosTipo0;
     var DadosTipo1 = app.models.dadosTipo1;
 
     
     var controller = {  
-        prob: function(req,res){
+        prob: function(req,res){                 
+
         const output = app.get('NeuralNet').run([203202,23929394,req.params.mes]);
-            // console.log(output);
-    
+                
         const stats = console.log(`Prob: ${output}`);
 
         res.send({output}); 
